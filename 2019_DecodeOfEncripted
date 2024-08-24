@@ -1,0 +1,39 @@
+# =============================
+# PROGRAM : Decode of Encripted
+# =============================
+
+def encodedLtrs(string):
+    '''find encoded letters'''
+    encod = []
+    
+    for asciVal in range(65, 91):
+        if chr(asciVal) in string:
+            encod.append(chr(asciVal)) # append the letters by acending of ascivals
+            
+    return encod 
+
+def decoding(string):
+    '''decoding a code'''
+    ltrsEncod = encodedLtrs(string) # get the letters
+    result = ''
+    
+    for i in range(len(string)):
+        tempChr = string[i]
+        
+        if tempChr in ltrsEncod:
+            tempIndex = ltrsEncod.index(tempChr)
+            result += ltrsEncod[len(ltrsEncod) - 1 - tempIndex] # decripting process
+        else:
+            result += tempChr
+
+    return result
+
+
+if __name__ == '__main__':
+    try:
+        encoded = input()
+        decoded = decoding(encoded)
+    except:
+        print('Error!')
+    else:
+        print(decoded)
