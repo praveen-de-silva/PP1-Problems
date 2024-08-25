@@ -9,6 +9,7 @@ class vector:
         self.z = z
 
     def __str__(self):
+        '''for prining purpose'''
         return f'<{self.x}, {self.y}, {self.z}>'
 
     def mod(self):
@@ -58,7 +59,7 @@ if __name__=='__main__':
         for vect in vects:
             vect.x, vect.y, vect.z = list(map(int, input().strip().split()))
     except:
-        print('Invalid Input!')
+        print('Invalid Input!') # handle exceptions
     else:
         vectOA = substract(vectA, vectO)
         vectOB = substract(vectB, vectO)
